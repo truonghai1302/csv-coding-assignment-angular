@@ -1,0 +1,36 @@
+<div class="mat-typography">
+  <main class="p-5">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <h2>
+        <button mat-raised-button color="primary" [routerLink]="['../']">Back</button>
+        <strong>
+          Details
+        </strong>
+      </h2>
+
+      <mat-card class="m-2">
+        <mat-card-subtitle>{{form.controls.id.value}}</mat-card-subtitle>
+        <mat-card-content>
+          <div>
+            <mat-form-field class="m-2">
+              <mat-label>Description</mat-label>
+              <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-slide-toggle color="primary" formControlName="completed">
+              {{ form.controls.completed.value ? 'Completed' : 'Incomplete' }}
+            </mat-slide-toggle>
+          </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-button color="primary" type="submit">
+            UPDATE
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+    </form>
+
+  </main>
+</div>

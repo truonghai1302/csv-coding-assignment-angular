@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>New Task</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="description"></textarea>
+    <button *ngIf="description" matSuffix mat-icon-button aria-label="Clear" (click)="description=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" color="primary" [disabled]="!description">NEW</button>
+</div>
